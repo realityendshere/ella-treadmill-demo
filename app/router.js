@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('sparse-better');
   this.route('preload-all');
   this.route('load-all');
+  this.route('sparse-grid');
 });
 
 export default Router;
