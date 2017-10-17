@@ -1,0 +1,17 @@
+{{#ella-treadmill
+  content=model
+  row='92px'
+  as |problem|
+}}
+  {{#if problem.is_loading}}
+    Loading...
+  {{else}}
+    {{problem-listing problem=problem}}
+  {{/if}}
+{{else}}
+  {{#if model.loading}}
+    Loading...
+  {{else}}
+    <p>No problems today!</p>
+  {{/if}}
+{{/ella-treadmill}}

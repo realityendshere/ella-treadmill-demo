@@ -7,6 +7,12 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('no-help');
+  this.route('treadmill');
+  this.route('sparse');
+  this.route('sparse-better');
+  this.route('preload-all');
+  this.route('load-all');
 });
 
 export default Router;
