@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import { get, set } from '@ember/object';
+import { get } from '@ember/object';
 
 export default Route.extend({
   model() {
@@ -13,11 +13,14 @@ export default Route.extend({
   },
 
   fetchAll(offset = 0, limit = 200) {
-    return this.store.query('problem', { page: { offset: offset, limit: limit } }).then((results) => {
-      set(this, 'total', get(results, 'meta.total'));
+    let query = { page: { offset: offset, limit: limit } };
+    let loaded = this.store.peekAll('problem');
 
-      if (get(this.store.peekAll('problem'), 'length') < get(results, 'meta.total')) {
+    return this.store.query('problem', query).then((results) => {
+      if (get(loaded, 'length') < get(results, 'meta.total')) {
         return this.fetchAll(offset + limit, limit);
+      } else {
+        return this.store.peekAll('problem');
       }
     });
   }

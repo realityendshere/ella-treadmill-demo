@@ -6,8 +6,12 @@ export default Route.extend({
   },
 
   actions: {
-    nextSet() {
+    loadMore() {
+      // Example: Maybe load another page
+    },
 
+    loadAll() {
+      // Example: Maybe load the rest of the records
     }
   }
 });

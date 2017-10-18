@@ -9,31 +9,24 @@ export default Route.extend({
     let store = get(this, 'store');
 
     return get(this, 'ellaSparse').array((range = {}, query = {}) => {
-      let page = {
-        limit: get(range, 'length'),
-        offset: get(range, 'start')
-      };
+      let page = { limit: get(range, 'length'), offset: get(range, 'start') };
+      let filter = { q: get(query, 'q') };
 
-      let filter = {
-        q: get(query, 'q')
-      }
-
-      let handler = (result) => {
+      return store.query('problem', { page: page, filter: filter }).then((result) => {
         return {
           data: result,
           total: get(result, 'meta.total')
         }
-      };
-
-      return store.query('problem', { page: page, filter: filter }).then(handler);
+      });
     }, {
-      ttl: 600000,
-      limit: 25
+      ttl: 600000, //Time to live for fetched content
+      limit: 25 //"Page size" for fetch queries
     });
   },
 
   actions: {
     handleScrollStart() {
+      // Don't fetch data while scrolling
       set(this, 'controller.model.enabled', false);
     },
 
