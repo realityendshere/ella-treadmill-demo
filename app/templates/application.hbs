@@ -1,1 +1,35 @@
-{{outlet}}
+<header>
+  <h1>
+    Welcome to Emberella!
+  </h1>
+</header>
+
+<nav>
+  <ul>
+    <li>
+      {{#link-to 'no-help'}}Find All{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'preload-all'}}Preload{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'load-all'}}Load Later{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'treadmill'}}Treadmill{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'sparse'}}Basic Sparse{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'sparse-better'}}Better Sparse{{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'sparse-grid'}}Grid{{/link-to}}
+    </li>
+  </ul>
+</nav>
+
+<main>
+  {{outlet}}
+</main>

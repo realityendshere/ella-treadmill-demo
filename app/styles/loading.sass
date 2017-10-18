@@ -1,0 +1,97 @@
+$blade-height: 12px
+
+.app-loading, .data-loading
+  width: 300px
+  margin: auto
+  text-align: center
+  padding: 4rem 0
+
+.loading-indicator
+  width: 100%
+
+  .dots
+    position: relative
+
+  .dot
+    display: inline-block
+    position: relative
+
+  &.balls
+    .dot
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      border: 2px solid $loading-ball-border-color
+      background: $loading-ball-fill-color
+      animation:
+        duration: 600ms
+        name: boing
+        iteration-count: infinite
+        direction: alternate
+
+      &.dot-1
+        animation-delay: 0ms
+
+      &.dot-2
+        animation-delay: 175ms
+
+      &.dot-3
+        animation-delay: 350ms
+
+      &.dot-4, &.dot-5, &.dot-6
+        display: none
+
+  &.blades
+    .dot
+      margin: 0 2px
+      width: 4px
+      height: $blade-height
+      background: $loading-ball-fill-color
+      animation:
+        duration: 1200ms
+        name: pulse
+        iteration-count: infinite
+
+      &.dot-1
+        animation-delay: 0ms
+
+      &.dot-2
+        animation-delay: 200ms
+
+      &.dot-3
+        animation-delay: 400ms
+
+      &.dot-4
+        animation-delay: 600ms
+
+      &.dot-5
+        animation-delay: 800ms
+
+      &.dot-6
+        animation-delay: 1000ms
+
+@keyframes boing
+  0%
+    top: 0
+    transform: scale(1, 1)
+
+  5%
+    top: 0
+    transform: scale(1, 0.7)
+
+  35%
+    top: 0
+    transform: scale(1, 1.15)
+
+  100%
+    top: -20px
+    transform: scale(1, 1)
+
+@keyframes pulse
+  0%
+    opacity: 1
+    background-color: $loading-ball-fill-color
+
+  100%
+    opacity: 0
+    background-color: #AAAAAA

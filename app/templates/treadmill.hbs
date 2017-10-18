@@ -6,7 +6,9 @@
   {{problem-listing problem=problem}}
 {{else}}
   {{#if model.loading}}
-    Loading...
+    <div class="loading data-loading">
+      {{loading-indicator class="balls"}}
+    </div>
   {{else}}
     <p>No problems today!</p>
   {{/if}}

@@ -6,13 +6,15 @@
   as |problem|
 }}
   {{#if problem.is_loading}}
-    Loading...
+    {{loading-indicator class="blades"}}
   {{else}}
     {{problem-listing problem=problem}}
   {{/if}}
 {{else}}
   {{#if model.loading}}
-    Loading...
+    <div class="loading data-loading">
+      {{loading-indicator class="balls"}}
+    </div>
   {{else}}
     <p>No problems today!</p>
   {{/if}}
