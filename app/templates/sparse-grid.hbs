@@ -2,10 +2,7 @@
   <input type="text" value={{search}} oninput={{action "applySearch" value='target.value'}} onkeydown={{action "applySearch" value='target.value'}} placeholder='Search for problems...' />
 </div>
 
-{{#ella-treadmill
-  content=problems
-  row='92px'
-  minColumnWidth='300px'
+{{#ella-treadmill content=problems row='92px' minColumnWidth='300px'
   on-scroll-start=(route-action 'handleScrollStart')
   on-scroll-end=(route-action 'handleScrollEnd')
   as |problem|
