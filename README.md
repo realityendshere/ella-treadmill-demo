@@ -1,7 +1,12 @@
-# ella-treadmill-demo
+# Emberella Treadmill Demo App
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Thanks for stopping by!
+
+This demo app showcases the challenges of listing more than a few dozen records and how to address the problem with the addons [Emberella Treadmill](https://github.com/realityendshere/ella-treadmill) and [Emberella Sparse](https://github.com/realityendshere/ella-sparse).
+
+This example illustrates a relatively extreme scenario of a customer with 30,099 records to manage. Personally, I have successfully applied the strategy of lazily-loading and lazily-rendering records with listing sizes from 100 to 100,000. In other words, it's another user interaction pattern to consider as an alternative to pagination or infinite scroll.
+
+This app was used as part of a talk at the Ember Meetup in Los Angeles on October 18, 2017. The companion slide deck can be found [here](https://github.com/realityendshere/ella-treadmill-demo/blob/master/2017-10-18-Ember-Meetup-LA.pdf).
 
 ## Prerequisites
 
@@ -10,11 +15,10 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
 * [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
-* `git clone <repository-url>` this repository
+* `git clone https://github.com/realityendshere/ella-treadmill-demo.git` this repository
 * `cd ella-treadmill-demo`
 * `npm install`
 
@@ -22,30 +26,5 @@ You will need the following things properly installed on your computer.
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+The links in the included slide deck point to corresponding routes at [http://localhost:4200](http://localhost:4200).
