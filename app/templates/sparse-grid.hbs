@@ -2,6 +2,10 @@
   <input type="text" value={{search}} oninput={{action "applySearch" value='target.value'}} onkeydown={{action "applySearch" value='target.value'}} placeholder='Search for problems...' />
 </div>
 
+<p>
+  Emberella Treadmill supports a simple grid layout and Emberella Sparse can respond to filter parameter changes (such as this really basic search).
+</p>
+
 {{#ella-treadmill content=problems row='92px' minColumnWidth='300px'
   on-scroll-start=(route-action 'handleScrollStart')
   on-scroll-end=(route-action 'handleScrollEnd')

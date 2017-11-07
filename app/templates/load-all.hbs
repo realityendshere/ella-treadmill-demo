@@ -1,3 +1,7 @@
+<p>
+  Promising to fetch all the records after the page renders creates a better illusion of performance. But this route still loads and renders 30,099 records. That's a bunch of API requests and DOM elements to manage!
+</p>
+
 {{#each model as |problem|}}
   {{problem-listing problem=problem}}
 {{/each}}
