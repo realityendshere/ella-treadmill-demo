@@ -2,8 +2,8 @@ export default function() {
 
   this.timing = 50;
 
-  this.get('/problems', ({ problems }, request) => {
-    let allProblems = problems.all();
+  this.get('/problems', function(schema, request) {
+    let allProblems = schema.problems.all();
     let { queryParams } = request;
     let offset = queryParams["page[offset]"];
     let limit = queryParams["page[limit]"];
@@ -20,7 +20,7 @@ export default function() {
       });
     }
 
-    let json = allProblems.slice(offset, offset + limit);
+    let json = this.serialize(allProblems.slice(offset, offset + limit));
 
     json.meta = { total: allProblems.length };
 
