@@ -13,7 +13,7 @@ This app was used as part of a talk at the Ember Meetup in Los Angeles on Octobe
 You will need the following things properly installed on your computer.
 
 * [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with NPM)
+* [Node.js](https://nodejs.org/) (with npm)
 * [Ember CLI](https://ember-cli.com/)
 
 ## Installation
@@ -26,5 +26,7 @@ You will need the following things properly installed on your computer.
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
+
+## Further Reading / Useful Links
 
 The links in the included slide deck point to corresponding routes at [http://localhost:4200](http://localhost:4200).
