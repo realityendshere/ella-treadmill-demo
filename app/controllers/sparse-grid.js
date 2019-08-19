@@ -1,3 +1,4 @@
+import { alias } from '@ember/object/computed';
 import Controller from '@ember/controller';
 import { get, set, computed } from '@ember/object';
 import { task, timeout } from 'ember-concurrency';
@@ -7,11 +8,11 @@ export default Controller.extend({
 
   search: null,
 
-  problems: computed.alias('model'),
+  problems: alias('model'),
 
   actions: {
     applySearch(term) {
-      get(this, 'updateFilter').perform(term);
+      this.updateFilter.perform(term);
     }
   },
 
@@ -20,9 +21,9 @@ export default Controller.extend({
 
     yield timeout(500);
 
-    let model = get(this, 'model');
+    let model = this.model;
 
-    model.filterBy({ q: get(this, 'search') })
+    model.filterBy({ q: this.search })
 
     return true;
   }).restartable(),

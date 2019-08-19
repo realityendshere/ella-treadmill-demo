@@ -6,9 +6,9 @@ export default Route.extend({
   ellaSparse: service('ella-sparse'),
 
   model() {
-    let store = get(this, 'store');
+    let store = this.store;
 
-    return get(this, 'ellaSparse').array((range = {}, query = {}) => {
+    return this.ellaSparse.array((range = {}, query = {}) => {
       let page = { limit: get(range, 'length'), offset: get(range, 'start') };
       let filter = { q: get(query, 'q') };
 
