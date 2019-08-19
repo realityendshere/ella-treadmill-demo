@@ -4,9 +4,9 @@
 
 {{#ella-treadmill
   content=model
-  row='92px'
-  on-scroll-start=(route-action 'handleScrollStart')
-  on-scroll-end=(route-action 'handleScrollEnd')
+  row="92px"
+  on-scroll-start=(route-action "handleScrollStart")
+  on-scroll-end=(route-action "handleScrollEnd")
   as |problem|
 }}
   {{#if problem.is_loading}}
